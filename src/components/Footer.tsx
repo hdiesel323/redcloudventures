@@ -21,7 +21,7 @@ const Footer: React.FC<FooterProps> = ({ siteName }) => {
           <a className="hover:text-blue-600 transition-colors duration-300" href="#contact">Contact</a>
         </div>
         <div className="mb-6">
-          <p>Phone: +1(877) 449-6600 | Email: info@redcloudventures.com</p>
+          <p>Phone: +1 (877) 449-6600 | Email: info@redcloudventures.com</p>
         </div>
         <div className="mb-6 flex justify-center space-x-4">
           <a href="#" className="text-gray-400 hover:text-blue-600"><Linkedin size={24} /></a>
