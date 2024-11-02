@@ -1,21 +1,21 @@
-import React from 'react';
+import React, { FC } from 'react';
 import { Quote } from 'lucide-react';
-import { Testimonial } from '../config/siteConfig';
+import type { Testimonial as TestimonialType } from '../config/siteConfig';
 
-const TestimonialCard: React.FC<Testimonial> = ({ quote, name, title }) => (
+const TestimonialCard: FC<TestimonialType> = ({ content, name, role }) => (
   <div className="card p-8 text-left relative overflow-hidden group">
     <div className="absolute inset-0 bg-gradient-to-br from-teal-400/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     <Quote className="text-teal-400 mb-4" size={48} />
-    <p className="text-xl italic mb-6 relative z-10">{quote}</p>
+    <p className="text-xl italic mb-6 relative z-10">{content}</p>
     <div>
       <p className="font-semibold text-lg">{name}</p>
-      <p className="text-teal-400">{title}</p>
+      <p className="text-teal-400">{role}</p>
     </div>
   </div>
 );
 
 interface TestimonialSectionProps {
-  testimonials: Testimonial[];
+  testimonials: TestimonialType[];
 }
 
 const TestimonialSection: React.FC<TestimonialSectionProps> = ({ testimonials }) => {

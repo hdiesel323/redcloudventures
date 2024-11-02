@@ -22,6 +22,41 @@ export interface SiteConfig {
   processTitle: string;
   processSteps: { title: string; description: string }[];
   calendlyUrl: string;
+  pricingTitle: string;
+  pricingPlans: PricingPlan[];
+  faqs: FAQ[];
+  testimonials: Testimonial[];
+}
+
+export interface FAQ {
+  question: string;
+  answer: string;
+}
+
+export const FAQ: FAQ[] = [
+  // Your FAQ items here
+];
+
+export interface Testimonial {
+  name: string;
+  role: string;
+  content: string;
+  // add other properties as needed
+}
+
+export const testimonials: Testimonial[] = [
+  // Your testimonial items here
+];
+
+export interface PricingFeature {
+  name: string;
+}
+
+export interface PricingPlan {
+  title: string;
+  price: string;
+  period: string;
+  features: PricingFeature[];
 }
 
 const siteConfig: SiteConfig = {
@@ -95,7 +130,36 @@ const siteConfig: SiteConfig = {
       description: "Implementation of value-add strategies to maximize returns and ongoing asset management to ensure peak performance."
     }
   ],
-  calendlyUrl: "https://calendly.com/redcloudventures/consultation"
+  calendlyUrl: "https://calendly.com/redcloudventures/consultation",
+  pricingTitle: "Investment Plans",
+  pricingPlans: [
+    {
+      title: "Starter",
+      price: "$50k+",
+      period: "Minimum Investment",
+      features: [
+        { name: "Access to select properties" },
+        { name: "Quarterly reporting" },
+        { name: "Basic investor support" }
+      ]
+    },
+    // Add more plans as needed
+  ],
+  faqs: [
+    {
+      question: "What is your minimum investment?",
+      answer: "Our minimum investment typically starts at $50,000."
+    },
+    // ... more FAQs
+  ],
+  testimonials: [
+    {
+      name: "John Doe",
+      role: "Real Estate Investor",
+      content: "Working with Red Cloud Ventures has been exceptional..."
+    },
+    // ... more testimonials
+  ]
 };
 
 export default siteConfig;

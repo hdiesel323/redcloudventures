@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
-import { FAQ } from '../config/siteConfig';
+import type { FAQ as FAQType } from '../config/siteConfig';
 
-const FAQItem: React.FC<FAQ> = ({ question, answer }) => {
+const FAQItem: React.FC<FAQType> = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -21,14 +21,14 @@ const FAQItem: React.FC<FAQ> = ({ question, answer }) => {
 
 interface FAQSectionProps {
   title: string;
-  faqs: FAQ[];
+  faqs: FAQType[];
 }
 
 const FAQSection: React.FC<FAQSectionProps> = ({ title, faqs }) => {
   return (
     <section className="py-20">
       <h2 className="text-4xl font-bold text-center mb-12">
-        {title.split(' ').map((word, index) => 
+        {title.split(' ').map((word, index) =>
           index % 3 === 0 ? <span key={index} className="gradient-text">{word} </span> : word + ' '
         )}
       </h2>
