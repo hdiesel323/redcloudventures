@@ -10,7 +10,7 @@ const About: React.FC<AboutProps> = ({ title, description }) => {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-4xl mx-auto text-center px-4">
         <h2 className="text-4xl font-bold mb-8 text-gray-900">
-          {title.split(' ').map((word, index) => 
+          {title.split(' ').map((word, index) =>
             index % 3 === 0 ? <span key={index} className="gradient-text">{word} </span> : word + ' '
           )}
         </h2>

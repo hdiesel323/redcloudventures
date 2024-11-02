@@ -12,7 +12,7 @@ const Hero: React.FC<HeroProps> = ({ title, subtitle }) => {
       <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-indigo-100 opacity-50"></div>
       <div className="relative z-10">
         <h1 className="text-6xl font-bold mb-6 leading-tight text-gray-900">
-          {title.split(' ').map((word, index) => 
+          {title.split(' ').map((word, index) =>
             index % 3 === 0 ? <span key={index} className="gradient-text">{word} </span> : word + ' '
           )}
         </h1>
